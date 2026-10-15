@@ -359,3 +359,56 @@ body:has(.lightbox-toggle:checked) { overflow: hidden; }
   .photo-section details summary,
   .photo-section details summary span { transition: none; }
 }
+
+.guided-adventures .directions { max-width: none; }
+.guide-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+.guide-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-top: 4px solid var(--yellow);
+  background: #f2efdf;
+}
+.guide-option .guide-region {
+  margin: 0 0 10px;
+  color: #687052;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+.guide-option h4 {
+  margin: 0 0 10px;
+  font: 500 1.3rem/1.2 var(--serif);
+  color: var(--green);
+}
+.guide-option > p:not(.guide-region) {
+  margin: 0 0 18px;
+  color: #4f5840;
+  font-size: .88rem;
+  line-height: 1.65;
+}
+.guide-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: auto; }
+.guide-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--green);
+  color: var(--cream);
+  font-size: .76rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.guide-links a:hover { background: #465434; }
+.guide-links a:focus-visible { outline: 3px solid #a1781e; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .guide-options { grid-template-columns: 1fr; }
+}
+
