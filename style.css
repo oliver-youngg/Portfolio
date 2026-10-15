@@ -328,3 +328,34 @@ body:has(.lightbox-toggle:checked) { overflow: hidden; }
   .about { padding-left: 6%; padding-right: 6%; }
   .about > p:not(.eyebrow) { max-width: 100%; }
 }
+
+/* Make each location control read and feel like a large tap target. */
+.photo-section details { margin-top: 18px; padding: 0; border: 0; }
+.photo-section details summary {
+  width: 100%;
+  min-height: 58px;
+  padding: 15px 18px;
+  border-left: 5px solid var(--yellow);
+  background: var(--green);
+  color: var(--cream);
+  font-size: clamp(.98rem, 1vw, 1.12rem);
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+.photo-section details summary:hover { background: #465434; }
+.photo-section details summary span {
+  color: #f0cc63;
+  font-size: 1.35rem;
+  line-height: 1;
+  transition: transform .18s ease;
+}
+.photo-section details[open] summary { background: #465434; }
+.photo-section details[open] summary span { transform: rotate(45deg); }
+.photo-section details summary:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+.photo-section .directions { padding: 18px 18px 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .photo-section details summary,
+  .photo-section details summary span { transition: none; }
+}
